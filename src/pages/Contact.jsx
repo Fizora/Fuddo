@@ -10,13 +10,13 @@ function Contact() {
         </h1>
         <div className="flex items-center gap-1 mt-2">
           <Link
-            to={""}
+            to={"/Showcase"}
             className="px-6 rounded-full bg-white border-2 border-white shadow-md py-2"
           >
             See Photo
           </Link>
           <Link
-            to={""}
+            to={"/Contact"}
             className="px-6 rounded-full bg-black text-white border-2 dark:border-white dark:hover:bg-white dark:hover:text-black duration-300 shadow-md py-2"
           >
             Contact
