@@ -199,8 +199,17 @@ function Home() {
           </div>
         </section>
         {/* skilss */}
-        <section className="">
-          <h1></h1>
+        <section className="py-10 md:py-30">
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            <div className="">
+              <h1 className="text-5xl font-medium mb-4">My Skills</h1>
+              <p>
+                I specialize in video editing, photos and doing professional
+                photo shoots, with the best methods in the field of photography.
+              </p>
+            </div>
+            <div className=""></div>
+          </div>
         </section>
       </section>
     </SmoothScrollProviders>
