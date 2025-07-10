@@ -9,18 +9,21 @@ function Home() {
         <div className="py-50 flex flex-col md:flex-row w-full justify-between items-center">
           {/* left */}
           <div className="">
-            <div className="flex items-center gap-2 mb-20">
-              <div className="">
+            <div className="flex items-center gap-5 mb-20">
+              <div className="" data-aos="fade-right" data-aos-duration="800">
                 <h3 className="text-5xl dark:text-white">+200</h3>
                 <p className="text-gray-500">Project Completed</p>
               </div>
-              <div className="">
+              <div className="" data-aos="fade-right" data-aos-duration="600">
                 <h3 className="text-5xl dark:text-white">+24</h3>
                 <p className="text-gray-500">+50 works</p>
               </div>
             </div>
-            <h1 className="text-4xl md:text-7xl lg:text-9xl  dark:text-white ">
-              HELLO
+            <h1
+              className="text-4xl md:text-7xl lg:text-9xl mb-4  dark:text-white "
+              data-aos="fade-up"
+            >
+              Welcome
             </h1>
             <p className="text-gray-500">
               {" "}
@@ -28,7 +31,7 @@ function Home() {
             </p>
           </div>
           {/* right */}
-          <div className="md:w-1/2">
+          <div className="md:w-1/2" data-aos="fade-left">
             <img src="/fuddo.png" alt="" className=" rounded-full shadow-md" />
           </div>
         </div>
@@ -46,33 +49,7 @@ function Home() {
             Contact
           </Link>
         </div>
-        {/* main navigation */}
-        <nav className="grid grid-cols-2 md:grid-cols-4 gap-2 justify-center py-20 md:text-3xl">
-          <Link
-            to={"/"}
-            className="px-6  bg-black text-white dark:bg-white dark:text-black rounded-tl-lg rounded-br-lg"
-          >
-            About Me
-          </Link>
-          <Link
-            to={"/Experiences"}
-            className="px-6  bg-gray-400 text-white dark:text-black rounded-tl-lg rounded-br-lg"
-          >
-            Experiences
-          </Link>
-          <Link
-            to={"/Contact"}
-            className="px-6  bg-gray-400 text-white dark:text-black rounded-tl-lg rounded-br-lg"
-          >
-            Contact
-          </Link>
-          <Link
-            to={"/Service"}
-            className="px-6  bg-gray-400 text-white dark:text-black rounded-tl-lg rounded-br-lg"
-          >
-            Service
-          </Link>
-        </nav>
+
         {/* about me section */}
         <section className="py-16 md:py-24">
           <div className="px-4">
