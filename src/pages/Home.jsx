@@ -5,7 +5,7 @@ function Home() {
   return (
     <SmoothScrollProviders>
       <section className="px-3 md:px-0 md:container md:mx-auto py-20 ">
-        <h1 className="text-4xl md:text-7xl lg:text-9xl font-medium dark:text-white tagline">
+        <h1 className="text-4xl md:text-7xl lg:text-9xl font-medium dark:text-white ">
           Eternal moments never stop throughout times.
         </h1>
         <div className="flex items-center gap-1 mt-2">
