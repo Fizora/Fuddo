@@ -29,10 +29,10 @@ function Home() {
     <SmoothScrollProviders>
       <section className="px-3 md:px-0 md:container md:mx-auto py-20">
         {/* Hero section */}
-        <div className="py-50 flex flex-col md:flex-row w-full justify-between items-center">
+        <div className="py-20 md:py-50 flex flex-col md:flex-row w-full justify-between items-center">
           {/* Left content */}
-          <div>
-            <div className="flex items-center gap-5 mb-20">
+          <div className="mb-20">
+            <div className="flex items-center gap-5 md:mb-20">
               <motion.div
                 initial="hidden"
                 animate="visible"
@@ -70,7 +70,7 @@ function Home() {
                 wrapper="h1" // Use h1 as the wrapper element
                 speed={50} // Typing speed (lower is faster)
                 repeat={Infinity} // Set to Infinity to loop endlessly
-                className="text-4xl md:text-7xl lg:text-9xl mb-4 dark:text-white"
+                className="text-6xl md:text-7xl lg:text-9xl mb-4 dark:text-white"
               />
             </motion.div>
 
@@ -83,6 +83,26 @@ function Home() {
             >
               - I am Fuddo, designer and photographer
             </motion.p>
+            <motion.div
+              className="flex items-center gap-2 mt-2"
+              initial="hidden"
+              animate="visible"
+              variants={fadeIn}
+              custom={1}
+            >
+              <Link
+                to={"/Showcase"}
+                className="px-6 rounded-full border-2 border-white bg-white shadow-md py-2 hover:scale-105 transition-transform duration-300"
+              >
+                See Photo
+              </Link>
+              <Link
+                to={"/Contact"}
+                className="px-6 rounded-full border-black bg-black dark:bg-transparent text-white border-2 dark:border-white dark:hover:bg-white dark:hover:text-black duration-300 shadow-md py-2 hover:scale-105 transition-transform "
+              >
+                Contact
+              </Link>
+            </motion.div>
           </div>
 
           {/* Right image */}
@@ -96,27 +116,6 @@ function Home() {
             <img src="/fuddo.png" alt="Fuddo" className="rounded-full" />
           </motion.div>
         </div>
-
-        <motion.div
-          className="flex items-center gap-2 mt-2"
-          initial="hidden"
-          animate="visible"
-          variants={fadeIn}
-          custom={1}
-        >
-          <Link
-            to={"/Showcase"}
-            className="px-6 rounded-full border-2 border-white bg-white shadow-md py-2 hover:scale-105 transition-transform duration-300"
-          >
-            See Photo
-          </Link>
-          <Link
-            to={"/Contact"}
-            className="px-6 rounded-full border-black bg-black dark:bg-transparent text-white border-2 dark:border-white dark:hover:bg-white dark:hover:text-black duration-300 shadow-md py-2 hover:scale-105 transition-transform duration-300"
-          >
-            Contact
-          </Link>
-        </motion.div>
 
         {/* About me section */}
         <motion.section
@@ -169,13 +168,13 @@ function Home() {
         </motion.section>
         {/* best photo highlight */}
         <section className=" flex flex-col justify-center">
-          <h1 className="text-3xl dark:text-white md:text-5xl font-medium text-right mb-20">
+          <h1 className="text-3xl  dark:text-white md:text-5xl font-medium text-right mb-20">
             Best{" "}
             <span className="bg-black text-white dark:bg-white dark:text-black px-4">
               Photos.
             </span>
           </h1>
-          <div className="grid grid-cols-3 px-20 gap-4 -rotate-12 py-10 skew-9 border border-gray-300 rounded-md">
+          <div className="grid grid-cols-2 lg:grid-cols-3 px-20 gap-4 lg:-rotate-12 py-10 lg:skew-9 lg:border lg:border-gray-300 rounded-md">
             <div className="bg-gray-300 rounded-md">
               <img
                 src="/1.JPG"
@@ -198,6 +197,10 @@ function Home() {
               />
             </div>
           </div>
+        </section>
+        {/* skilss */}
+        <section className="">
+          <h1></h1>
         </section>
       </section>
     </SmoothScrollProviders>
