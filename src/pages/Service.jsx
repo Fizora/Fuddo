@@ -5,10 +5,34 @@ function Service() {
   return (
     <SmoothScrollProviders>
       <section className="px-3 md:px-0 md:container md:mx-auto py-20 ">
-        <h1 className="text-4xl md:text-7xl lg:text-9xl font-medium dark:text-white tagline">
-          Eternal moments never stop throughout times.
-        </h1>
-        <div className="flex items-center gap-1 mt-2">
+        {/* hero section */}
+        <div className="py-50 flex w-full justify-between items-center">
+          {/* left */}
+          <div className="">
+            <div className="flex items-center gap-2 mb-20">
+              <div className="">
+                <h3 className="text-5xl dark:text-white">+200</h3>
+                <p className="text-gray-500">Project Completed</p>
+              </div>
+              <div className="">
+                <h3 className="text-5xl dark:text-white">+24</h3>
+                <p className="text-gray-500">+50 works</p>
+              </div>
+            </div>
+            <h1 className="text-4xl md:text-7xl lg:text-9xl  dark:text-white ">
+              HELLO
+            </h1>
+            <p className="text-gray-500">
+              {" "}
+              - I am Fuddo, designer and photographer
+            </p>
+          </div>
+          {/* right */}
+          <div className="w-1/2 ">
+            <img src="/fuddo.png" alt="" className=" rounded-full shadow-md" />
+          </div>
+        </div>
+        <div className="flex items-center gap-2 mt-2">
           <Link
             to={"/Showcase"}
             className="px-6 rounded-full  border-2 border-white bg-white shadow-md py-2"
@@ -17,40 +41,40 @@ function Service() {
           </Link>
           <Link
             to={"/Contact"}
-            className="px-6 rounded-full bg-black text-white border-2 dark:border-white dark:hover:bg-white dark:hover:text-black duration-300 shadow-md py-2"
+            className="px-6 rounded-full border-black  bg-black dark:bg-transparent text-white border-2 dark:border-white dark:hover:bg-white dark:hover:text-black duration-300 shadow-md py-2"
           >
             Contact
           </Link>
         </div>
-        {/* nav */}
+        {/* main navigation */}
         <nav className="grid grid-cols-2 md:grid-cols-4 gap-2 justify-center py-20 md:text-3xl ">
           <Link
             to={"/"}
-            className="px-6 py-1.5 bg-gray-400 text-white dark:text-black rounded-tl-lg rounded-br-lg"
+            className="px-6  bg-gray-400 text-white dark:text-black rounded-tl-lg rounded-br-lg"
           >
             About Me
           </Link>
           <Link
             to={"/Experiences"}
-            className="px-6 py-1.5 bg-gray-400 text-white dark:text-black rounded-tl-lg rounded-br-lg"
+            className="px-6  bg-gray-400 text-white dark:text-black rounded-tl-lg rounded-br-lg"
           >
             Experiences
           </Link>
           <Link
             to={"/Contact"}
-            className="px-6 py-1.5 bg-gray-400 text-white dark:text-black rounded-tl-lg rounded-br-lg"
+            className="px-6  bg-gray-400 text-white dark:text-black rounded-tl-lg rounded-br-lg"
           >
             Contact
           </Link>
           <Link
             to={"/Service"}
-            className="px-6 py-1.5 bg-black text-white dark:bg-white dark:text-black rounded-tl-lg rounded-br-lg"
+            className="px-6  bg-black text-white dark:bg-white dark:text-black rounded-tl-lg rounded-br-lg"
           >
             Service
           </Link>
         </nav>
         {/* about me section */}
-        <section className="py-16 md:py-24">
+        <section className="6 md:py-24">
           <div className="px-4">
             <h2 className="text-3xl md:text-5xl font-medium text-black dark:text-white mb-6">
               Through the Lens of Passion

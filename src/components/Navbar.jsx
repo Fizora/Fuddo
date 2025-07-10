@@ -1,12 +1,5 @@
 import { useState } from "react";
-import {
-  LuMenu,
-  LuX,
-  LuMoon,
-  LuSun,
-  LuInstagram,
-  LuTwitter,
-} from "react-icons/lu";
+import { LuMenu, LuX, LuMoon, LuSun, LuArrowRight } from "react-icons/lu";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -15,6 +8,14 @@ function Navbar({ darkMode, setDarkMode }) {
 
   const handleLinkClick = () => {
     setIsOpen(false);
+  };
+  const arrowVariants = {
+    rest: { rotate: 0, x: 0, y: 0 },
+    hover: {
+      rotate: -45,
+      x: 0,
+      y: 0,
+    },
   };
 
   const menuVariants = {
@@ -65,12 +66,20 @@ function Navbar({ darkMode, setDarkMode }) {
               </Link>
             </motion.div>
           ))}
-          <a
+          <motion.a
             href="https://instagram.com/yourphotographer"
-            className="dark:text-white"
+            className="dark:text-white flex items-center gap-2 "
+            initial="rest"
+            whileHover="hover"
           >
-            <LuInstagram size={20} />
-          </a>
+            <span className="border-b">Instagram</span>
+            <motion.span
+              className="bg-gray-200 p-1 dark:text-black rounded-full"
+              variants={arrowVariants}
+            >
+              <LuArrowRight />
+            </motion.span>
+          </motion.a>
           <motion.button
             onClick={() => setDarkMode(!darkMode)}
             className="p-2 rounded-full bg-gray-200 dark:bg-white text-black transition-colors duration-200"

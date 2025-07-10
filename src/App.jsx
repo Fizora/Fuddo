@@ -19,7 +19,7 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-      <main className="bg-gradient-to-b from-gray-100 to-white bg-gray-100 dark:from-gray-900 dark:to-black transition-colors min-h-screen">
+      <main className="dark:bg-gradient-to-b bg-slate-50  dark:from-gray-900 dark:to-black transition-colors min-h-screen">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Experiences" element={<Experiences />} />
