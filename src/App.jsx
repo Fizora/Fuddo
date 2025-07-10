@@ -26,7 +26,7 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-      <main className="dark:bg-gradient-to-b bg-slate-50  dark:from-gray-900 dark:to-black transition-colors min-h-screen">
+      <main className="dark:bg-gradient-to-b bg-slate-50  dark:from-gray-900 dark:to-black transition-colors min-h-screen ">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Showcase" element={<Showcase />} />

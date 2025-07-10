@@ -1,80 +1,204 @@
 import { Link } from "react-router-dom";
+import { motion } from "motion/react";
+import { TypeAnimation } from "react-type-animation";
 import SmoothScrollProviders from "./SmoothScrollProviders";
+
+// Animation variants for consistent effects
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
+
+const fadeInRight = {
+  hidden: { opacity: 0, x: -20 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
+};
+
+const fadeInLeft = {
+  hidden: { opacity: 0, x: 20 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
+};
+
+const fadeIn = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.8 } },
+};
 
 function Home() {
   return (
     <SmoothScrollProviders>
-      <section className="px-3 md:px-0 md:container md:mx-auto py-20 ">
-        {/* hero section */}
+      <section className="px-3 md:px-0 md:container md:mx-auto py-20">
+        {/* Hero section */}
         <div className="py-50 flex flex-col md:flex-row w-full justify-between items-center">
-          {/* left */}
-          <div className="">
+          {/* Left content */}
+          <div>
             <div className="flex items-center gap-5 mb-20">
-              <div className="" data-aos="fade-right" data-aos-duration="800">
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={fadeInRight}
+                custom={0}
+                className=""
+              >
                 <h3 className="text-5xl dark:text-white">+200</h3>
                 <p className="text-gray-500">Project Completed</p>
-              </div>
-              <div className="" data-aos="fade-right" data-aos-duration="600">
+              </motion.div>
+
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={fadeInRight}
+                custom={0.2}
+                className=""
+              >
                 <h3 className="text-5xl dark:text-white">+24</h3>
                 <p className="text-gray-500">+50 works</p>
-              </div>
+              </motion.div>
             </div>
-            <h1
-              className="text-4xl md:text-7xl lg:text-9xl mb-4  dark:text-white "
-              data-aos="fade-up"
+
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={fadeInUp}
+              custom={0.4}
             >
-              Welcome
-            </h1>
-            <p className="text-gray-500">
-              {" "}
+              <TypeAnimation
+                sequence={[
+                  "Welcome", // Text to type
+                  1000, // Wait 1s before restarting
+                ]}
+                wrapper="h1" // Use h1 as the wrapper element
+                speed={50} // Typing speed (lower is faster)
+                repeat={Infinity} // Set to Infinity to loop endlessly
+                className="text-4xl md:text-7xl lg:text-9xl mb-4 dark:text-white"
+              />
+            </motion.div>
+
+            <motion.p
+              className="text-gray-500"
+              initial="hidden"
+              animate="visible"
+              variants={fadeInUp}
+              custom={0.6}
+            >
               - I am Fuddo, designer and photographer
-            </p>
+            </motion.p>
           </div>
-          {/* right */}
-          <div className="md:w-1/2" data-aos="fade-left">
-            <img src="/fuddo.png" alt="" className=" rounded-full shadow-md" />
-          </div>
+
+          {/* Right image */}
+          <motion.div
+            className="md:w-1/2"
+            initial="hidden"
+            animate="visible"
+            variants={fadeInLeft}
+            custom={0.8}
+          >
+            <img src="/fuddo.png" alt="Fuddo" className="rounded-full" />
+          </motion.div>
         </div>
-        <div className="flex items-center gap-2 mt-2">
+
+        <motion.div
+          className="flex items-center gap-2 mt-2"
+          initial="hidden"
+          animate="visible"
+          variants={fadeIn}
+          custom={1}
+        >
           <Link
             to={"/Showcase"}
-            className="px-6 rounded-full  border-2 border-white bg-white shadow-md py-2"
+            className="px-6 rounded-full border-2 border-white bg-white shadow-md py-2 hover:scale-105 transition-transform duration-300"
           >
             See Photo
           </Link>
           <Link
             to={"/Contact"}
-            className="px-6 rounded-full border-black   bg-black dark:bg-transparent text-white border-2 dark:border-white dark:hover:bg-white dark:hover:text-black duration-300 shadow-md py-2"
+            className="px-6 rounded-full border-black bg-black dark:bg-transparent text-white border-2 dark:border-white dark:hover:bg-white dark:hover:text-black duration-300 shadow-md py-2 hover:scale-105 transition-transform duration-300"
           >
             Contact
           </Link>
-        </div>
+        </motion.div>
 
-        {/* about me section */}
-        <section className="py-16 md:py-24">
+        {/* About me section */}
+        <motion.section
+          className="py-16 md:py-24"
+          initial="hidden"
+          animate="visible"
+          variants={fadeIn}
+          custom={1.2}
+        >
           <div className="px-4">
-            <h2 className="text-3xl md:text-5xl font-medium text-black dark:text-white mb-6 oldtag">
-              About Me
-            </h2>
-            <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-3xl leading-relaxed">
+            <motion.h2
+              className="text-3xl md:text-5xl font-medium text-black dark:text-white mb-6 oldtag"
+              initial="hidden"
+              animate="visible"
+              variants={fadeInUp}
+              custom={0}
+            >
+              About Me.
+            </motion.h2>
+
+            <motion.p
+              className="  text-gray-700 dark:text-gray-300 max-w-3xl leading-relaxed"
+              initial="hidden"
+              animate="visible"
+              variants={fadeInUp}
+              custom={0.2}
+            >
               I am a traveler of light, capturing moments that whisper of life,
               love, and beauty. Photography for me is not just a profession, but
               a way to tell untold stories—from hopeful smiles to landscapes
               that greet the soul. Starting from a fascination with the simple
               wonders around me, I have explored the world through my lens,
               learning that every frame is a timeless visual poem.
-            </p>
+            </motion.p>
 
-            <Link
-              to="/Showcase"
-              className="mt-8 inline-block bg-black text-white dark:bg-white dark:text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors duration-300"
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={fadeInUp}
+              custom={0.4}
             >
-              Jelajahi Karya Saya
-            </Link>
+              <Link
+                to="/Showcase"
+                className="mt-8 inline-block bg-black text-white dark:bg-white dark:text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors duration-300 hover:scale-105"
+              >
+                Jelajahi Karya Saya
+              </Link>
+            </motion.div>
+          </div>
+        </motion.section>
+        {/* best photo highlight */}
+        <section className=" flex flex-col justify-center">
+          <h1 className="text-3xl dark:text-white md:text-5xl font-medium text-right mb-20">
+            Best{" "}
+            <span className="bg-black text-white dark:bg-white dark:text-black px-4">
+              Photos.
+            </span>
+          </h1>
+          <div className="grid grid-cols-3 px-20 gap-4 -rotate-12 py-10 skew-9 border border-gray-300 rounded-md">
+            <div className="bg-gray-300 rounded-md">
+              <img
+                src="/1.JPG"
+                alt=""
+                className=" hover:translate-x-3 hover:-translate-y-5 duration-300 rounded-md"
+              />
+            </div>
+            <div className="bg-gray-300 rounded-md">
+              <img
+                src="/1.JPG"
+                alt=""
+                className=" hover:translate-x-3 hover:-translate-y-5 duration-300 rounded-md"
+              />
+            </div>
+            <div className="bg-gray-300 rounded-md">
+              <img
+                src="/1.JPG"
+                alt=""
+                className=" hover:translate-x-3 hover:-translate-y-5 duration-300 rounded-md"
+              />
+            </div>
           </div>
         </section>
-        <div className=""></div>
-        <section className=""></section>
       </section>
     </SmoothScrollProviders>
   );
