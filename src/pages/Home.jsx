@@ -63,10 +63,7 @@ function Home() {
               custom={0.4}
             >
               <TypeAnimation
-                sequence={[
-                  "Welcome", // Text to type
-                  1000, // Wait 1s before restarting
-                ]}
+                sequence={["Welcome", 1000]}
                 wrapper="h1" // Use h1 as the wrapper element
                 speed={50} // Typing speed (lower is faster)
                 repeat={Infinity} // Set to Infinity to loop endlessly
